@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model</title>
+</head>
+<style>
+    body{
+        max-width: 1000px;
+        margin: 0 auto;
+        font-size: 1.5em;
+    }
+    #backdrop{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0.5;
+        display: none;
+    }
+    #modal{
+        position: absolute;
+        top: -350px;
+        left: 30%;
+        width: 40%;
+        height: 300px;
+        background: #333;
+        border-radius: 10px;
+        transition: top 0.5s;
+    }
+    #modal h2 {
+        border-radius: 10px 10px 0 0;
+        font-size: 1em;
+        margin: 0;
+        padding: 25px;
+        background: #222;
+            color: white;
+    }
+    .close {
+        float: right;
+        color: red;
+        text-decoration: none;
+    }
+
+</style>
+<script>
+        function show() {
+            document.querySelector("#backdrop").style.display = "block";
+            document.querySelector("#modal").style.top = "15%";
+        }
+
+        function hide() {
+            document.querySelector("#backdrop").style.display = "none";
+            document.querySelector("#modal").style.top = "-350px";
+        }
+    </script>
+<body>
+    <h1>Home Page</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis delectus, sed repellendus rerum distinctio pariatur eos tempore impedit adipisci, provident praesentium ea labore aliquid! Blanditiis hic quisquam ipsam magnam accusamus.</p>
+    <button>Click Me</button>
+
+    <div class="backdrop" onclick="hide()"></div>
+    <div id="modal">
+        <h2>Modal title</h2>
+        <a href="#" class="close" onclick="hide()">&times;</a>
+    </div>
+</body>
